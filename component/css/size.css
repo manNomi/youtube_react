@@ -1,0 +1,20 @@
+:root {
+  --header-size: 50px;
+  --aside-size: 55px;
+  --search-size: 732px;
+  --logo-size-small: 24px;
+  --thumb-size: 36px;
+  --window-small-size: 790px;
+  --shorts-width: 315px;
+  --shorts-height: 560px;
+  --shorts-icon-width: 32px;
+  --shorts-icon-height: 32px;
+  --shorts-icon-big-width: 48px;
+  --shorts-icon-big-height: 48px;
+  --shorts-aside-width: 48px;
+  --shorts-aside-height: 72px;
+  --detail-icon-width: 24px;
+  --detail-icon-height: 24px;
+  --comment-icon-width: 24px;
+  --comment-icon-height: 24px;
+}

@@ -1,0 +1,17 @@
+.aside {
+  display: none;
+  flex-direction: column;
+  width: var(--aside-size);
+  position: fixed;
+  height: 100%;
+  color: #626262;
+  margin-top: var(--header-size);
+  font-size: 13px;
+  text-align: center;
+  top: 0;
+}
+@media (min-width: 790px) {
+  .aside {
+    display: flex;
+  }
+}
