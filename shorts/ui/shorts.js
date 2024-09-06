@@ -9,6 +9,7 @@ const Shorts = () => {
     loading: commentsLoading,
     error: commentsError,
   } = useGetShortsCommentData();
+
   return shortsLoading || commentsLoading ? (
     <div>로딩중</div>
   ) : shortsError || commentsError ? (

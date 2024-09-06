@@ -1,8 +1,5 @@
 const Main = () => {
-  const [pageState, setPageState] = React.useState("Home");
-  const pageChangeEvent = (page) => {
-    setPageState(page);
-  };
+  const [pageState, useMainState] = useMainState();
   return (
     <>
       <Aside onPageClick={pageChangeEvent} />

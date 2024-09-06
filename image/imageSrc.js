@@ -7,4 +7,11 @@ const IconData = {
   soundSrc: "./image/shorts/sound.svg",
   soundnoneSrc: "./image/shorts/sound_none.svg",
   playSrc: "./image/shorts/play.svg",
+  alertSrc: "./image/header/alert.svg",
+  cameraSrc: "./image/header/camera.svg",
+  micSrc: "./image/header/mic.svg",
+  searchSrc: "./image/header/search.svg",
+  logoSrc: "./image/header/logo.svg",
+  arrowSrc: "./image/detail/arrow.svg",
+  arraySrc: "./image/detail/array.sng",
 };

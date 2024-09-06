@@ -1,9 +1,8 @@
-const HeaderIconList = ({ iconObj }) => {
-  const { camera, alert } = iconObj;
+const HeaderIconList = () => {
   return (
     <nav className="header_icon_list">
-      <HoverIcon resource={camera.resource} />
-      <HoverIcon resource={alert.resource} />
+      <HoverIcon resource={IconData.cameraSrc} />
+      <HoverIcon resource={IconData.alertSrc} />
       <Slider />
     </nav>
   );

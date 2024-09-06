@@ -1,5 +1,4 @@
-const SearchContainer = ({ iconObj }) => {
-  const { mic, search } = iconObj;
+const SearchContainer = () => {
   return (
     <div className="search_container">
       {/* 검색 박스 */}
@@ -9,7 +8,7 @@ const SearchContainer = ({ iconObj }) => {
         </div>
         <div
           className="search_hidden svg"
-          style={{ backgroundImage: `url(${search.resource})` }}
+          style={{ backgroundImage: `url(${IconData.searchSrc})` }}
         />
       </div>
 
@@ -17,12 +16,12 @@ const SearchContainer = ({ iconObj }) => {
       <button className="search_btn">
         <div
           className="search_btn_img svg"
-          style={{ backgroundImage: `url(${search.resource})` }}
+          style={{ backgroundImage: `url(${IconData.searchSrc})` }}
         />
       </button>
 
       {/* 마이크 아이콘 */}
-      <HoverIcon resource={mic.resource} />
+      <HoverIcon resource={IconData.micSrc} />
     </div>
   );
 };
