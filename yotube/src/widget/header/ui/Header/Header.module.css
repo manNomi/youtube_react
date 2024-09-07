@@ -1,0 +1,26 @@
+.root {
+  top: 0;
+  width: 100%;
+  position: sticky;
+  height: var(--header-size);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  background-color: white;
+}
+.logo_img {
+  width: 97px;
+  height: 20px;
+  margin-left: 13px;
+  cursor: pointer;
+}
+.logo_box {
+  left: 0;
+  width: 180px;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 13px;
+}

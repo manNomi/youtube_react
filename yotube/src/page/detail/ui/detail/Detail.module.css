@@ -1,0 +1,238 @@
+.frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.group {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.video_icon_list {
+  position: absolute;
+  display: flex;
+  top: 5%;
+}
+.video_icon {
+  opacity: 0.3;
+  cursor: pointer;
+  margin: 5px;
+  width: var(--detail-icon-big-width);
+  height: var(--detail-icon-big-height);
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+.video_icon:hover {
+  opacity: 0.7;
+}
+
+.user_img {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+}
+.subscribe_icon {
+  width: 40px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: white !important;
+  color: black !important;
+  text-align: center;
+  line-height: 25px;
+}
+
+.img {
+  width: 100%; /* 이미지를 컨테이너 너비에 맞게 조정 */
+  height: auto; /* 비율을 유지하면서 높이 자동 조절 */
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.user_title {
+  display: flex;
+  width: 100%;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.user_text {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+}
+
+.text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  margin: 3px;
+}
+
+.title_text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 3px;
+}
+
+.text_small {
+  font-size: small;
+  color: var(--color-gray);
+}
+.icon_box {
+  width: var(--detail-aside-width);
+  height: var(--detail-aside-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  width: var(--detail-icon-width);
+  height: var(--detail-icon-height);
+  border-radius: 50%;
+  margin: 1px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.introduce {
+  background-color: var(--color-gray);
+  border-radius: 3px;
+  margin: 10px;
+  padding: 10px;
+  color: white !important;
+  white-space: pre-line;
+}
+
+.comment_array {
+  display: flex;
+  margin: 5px;
+}
+.title_icon_text {
+  white-space: nowrap; /* 줄바꿈을 방지 */
+  overflow: hidden; /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis;
+}
+
+.like_border {
+  display: flex;
+}
+
+.like_text {
+  white-space: nowrap; /* 줄바꿈을 방지 */
+  overflow: hidden; /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: white !important;
+}
+
+.like_box {
+  width: 80px;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: var(--color-gray);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &:hover {
+    animation: bright_icon 0.5s forwards;
+  }
+}
+.dislike_box {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: var(--color-gray);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 5px;
+  &:hover {
+    animation: bright_icon 0.5s forwards;
+  }
+}
+.like {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-right: solid 1px white;
+  background-color: var(--color-x) !important;
+}
+.dislike {
+  background-color: var(--color-x) !important;
+}
+.icon_border {
+  width: auto;
+  height: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white !important;
+  background-color: var(--color-gray);
+  margin-right: 10px;
+  &:hover {
+    animation: bright_icon 0.5s forwards;
+  }
+}
+
+@keyframes bright_icon {
+  from {
+    background-color: var(--color-gray);
+  }
+  to {
+    background-color: var(--color-hover);
+  }
+}
+
+@keyframes bright_text {
+  from {
+    background-color: #00ff0000;
+  }
+  to {
+    background-color: var(--color-hover);
+  }
+}
