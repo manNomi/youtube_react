@@ -2,35 +2,32 @@ const iconData = [
   {
     content: "홈",
     type: "Home",
-    resource: `./image/aside/home.svg`,
+    resource: require("../assets/home.svg"),
   },
   {
     content: "숏츠",
     type: "Shorts",
-
-    resource: "./image/aside/shorts.svg",
+    resource: require("../assets/shorts.svg"),
   },
   {
     content: "구독",
     type: "Subscribe",
-
-    resource: "./image/aside/subscribe.svg",
+    resource: require("../assets/subscribe.svg"),
   },
   {
     content: "유튜브 뮤직",
     type: "YoutubeMusic",
-
-    resource: "./image/aside/youtube_music.svg",
+    resource: require("../assets/youtube_music.svg"),
   },
   {
     content: "나",
     type: "MyVideo",
-    resource: "./image/aside/user.svg",
+    resource: require("../assets/user.svg"),
   },
   {
     content: "오프라인 저장",
     type: "Offline",
-    resource: "./image/aside/download.svg",
+    resource: require("../assets/download.svg"),
   },
 ];
 export default iconData;

@@ -3,24 +3,20 @@ import css from "./Detail.module.css";
 import DetailComment from "../detailComment/DetailComment.js";
 import { setNumber, setDate } from "../../../../shared/setNumber/setNumber.js";
 
-const alertSrc = "/path/to/alert.svg";
-const arrowSrc = "/path/to/arrow.svg";
-const likeSrc = "/path/to/like.svg";
-const dislikeSrc = "/path/to/dislike.svg";
-const shareSrc = "/path/to/share.svg";
-const settingSrc = "/path/to/setting.svg";
-const arraySrc = "/path/to/array.svg";
+import alertSrc from "../../asset/alert.svg";
+import arrowSrc from "../../asset/arrow.svg";
+import likeSrc from "../../asset/like.svg";
+import dislikeSrc from "../../asset/dislike.svg";
+import shareSrc from "../../asset/share.svg";
+import settingSrc from "../../asset/setting.svg";
+import arraySrc from "../../asset/array.svg";
 
 const Detail = () => {
-  const {
-    detailList = {},
-    loading: detailLoading,
-    error: detailError,
-  } = useDetailData();
-
-  return detailLoading ? (
+  const [detailList, loading, error] = useDetailData();
+  console.log(detailList);
+  return loading ? (
     <div>로딩중</div>
-  ) : detailError ? (
+  ) : error ? (
     <div>에러</div>
   ) : (
     <main className={css.frame}>
@@ -95,8 +91,8 @@ const Detail = () => {
               style={{ backgroundImage: `url(${arraySrc})` }}></div>
             <p className={css.comment_array_text}>정렬 기준</p>
           </div>
+          <DetailComment user_img={detailList.userImg} />
         </div>
-        <DetailComment user_img={detailList.userImg} />
       </article>
     </main>
   );

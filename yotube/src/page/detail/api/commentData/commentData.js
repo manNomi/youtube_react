@@ -1,7 +1,7 @@
 const getCommentData = () => {
   const index = 15;
   const content = {
-    userImg: "./image/main/user_img.jpg",
+    userImg: "/asset/user_img.jpg",
     userName: "괴루무루쥐",
     content: "내용이 이쓸까요 업쓸까요 ? ",
     like: 441231,

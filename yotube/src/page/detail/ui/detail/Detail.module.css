@@ -5,7 +5,12 @@
   height: 100%;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+}
+@media (min-width: 790px) {
+  .frame {
+    margin-left: var(--aside-size);
+  }
 }
 .group {
   display: flex;

@@ -19,6 +19,6 @@ const useShortsCommentData = () => {
 
     fetchData();
   }, []);
-  return { commentDataList, loading, error };
+  return [commentDataList, loading, error];
 };
 export default useShortsCommentData;

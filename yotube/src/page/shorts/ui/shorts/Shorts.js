@@ -2,15 +2,11 @@ import css from "./Shorts.module.css";
 import ShortsVideo from "../shortsVideo/ShortsVideo.js";
 import useShortsData from "../../model/useShortsData/useShortsData.js";
 const Shorts = () => {
-  const {
-    shortsList,
-    loading: shortsLoading,
-    error: shortsError,
-  } = useShortsData();
+  const [shortsList, loading, error] = useShortsData();
 
-  return shortsLoading ? (
+  return loading ? (
     <div>로딩중</div>
-  ) : shortsError ? (
+  ) : error ? (
     <div>에러</div>
   ) : (
     <main className={css.root}>

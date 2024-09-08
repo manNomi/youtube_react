@@ -1,7 +1,7 @@
 import React from "react";
 import getDetailData from "../../api/detailData/detailData.js";
 
-const useGetDetailData = () => {
+const useDetailData = () => {
   const [detailList, setDetailList] = React.useState([]);
 
   const [loading, setLoading] = React.useState(true);
@@ -21,4 +21,4 @@ const useGetDetailData = () => {
   return [detailList, loading, error];
 };
 
-export default useGetDetailData;
+export default useDetailData;

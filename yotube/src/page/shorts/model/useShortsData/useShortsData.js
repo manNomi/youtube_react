@@ -18,8 +18,7 @@ const useShortsData = () => {
 
     fetchData();
   }, []);
-  return { shortsList, loading, error };
+  return [shortsList, loading, error];
 };
 
 export default useShortsData;
-

@@ -5,15 +5,12 @@ import CommentInput from "../../../../widget/comment_input/ui/CommentInput.js";
 import useShortsCommentData from "../../model/useShortsCommentData/useShortsCommentData.js";
 
 const ShortsComment = (props) => {
-  const {
-    commentDataList,
-    loading: commentsLoading,
-    error: commentsError,
-  } = useShortsCommentData();
+  const [commentDataList, loading, error] = useShortsCommentData();
 
-  return commentsLoading ? (
+  console.log(commentDataList);
+  return loading ? (
     <div>로딩중</div>
-  ) : commentsError ? (
+  ) : error ? (
     <div>에러</div>
   ) : (
     <dialog
@@ -35,7 +32,7 @@ const ShortsComment = (props) => {
           </div>
         </nav>
         <div className={css.comment_box}>
-          {commentDataList.commentList.map((comment) => (
+          {commentDataList.map((comment) => (
             <Comment {...comment} />
           ))}
         </div>

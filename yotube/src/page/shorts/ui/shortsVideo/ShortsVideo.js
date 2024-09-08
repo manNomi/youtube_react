@@ -12,23 +12,30 @@ import commentIcon from "../../asset/comment.svg";
 
 const ShortsVideo = (props) => {
   const [commentState, visibleCommentState] = useCommentState();
-  const { shortsData: data, commentData: commentList } = props;
 
   return (
     <article className={css.group}>
       <div className={css.video}>
-        <img className={css.img} src={data.thumbImg} alt="Video Thumbnail" />
+        <img
+          className={css.img}
+          src={props.shortsData.thumbImg}
+          alt="Video Thumbnail"
+        />
         <div className={css.video_icon_list}>
           <img className={css.video_icon} src={playIcon} alt="Play Icon" />
           <img className={css.video_icon} src={soundIcon} alt="Sound Icon" />
         </div>
         <div className={css.title}>
           <div className={css.user}>
-            <img className={css.user_img} src={data.userImg} alt="User Image" />
-            <p className={css.text}>{"@" + data.userName}</p>
+            <img
+              className={css.user_img}
+              src={props.shortsData.userImg}
+              alt="UserImage"
+            />
+            <p className={css.text}>{"@" + props.shortsData.userName}</p>
             <div className={css.subscribe_icon}>구독</div>
           </div>
-          <div className={css.text}>{data.title}</div>
+          <div className={css.text}>{props.shortsData.title}</div>
         </div>
       </div>
       <div className={css.icon_container}>
@@ -36,7 +43,9 @@ const ShortsVideo = (props) => {
           <div className={css.icon_border}>
             <img className={css.icon} src={likeIcon} alt="Like Icon" />
           </div>
-          <p className={css.text_icon_list}>{setNumber(data.like)}</p>
+          <p className={css.text_icon_list}>
+            {setNumber(props.shortsData.like)}
+          </p>
         </div>
         <div className={css.icon_box}>
           <div className={css.icon_border}>
@@ -52,7 +61,9 @@ const ShortsVideo = (props) => {
               style={{ backgroundImage: `url(${commentIcon})` }}
             />
           </div>
-          <p className={css.text_icon_list}>{setNumber(data.comment)}</p>
+          <p className={css.text_icon_list}>
+            {setNumber(props.shortsData.comment)}
+          </p>
         </div>
         <div className={css.icon_box}>
           <div className={css.icon_border}>
@@ -67,9 +78,9 @@ const ShortsVideo = (props) => {
         </div>
       </div>
       <ShortsComment
-        userImg={data.userImg}
-        comment={data.comment}
-        commentList={commentList}
+        userImg={props.shortsData.userImg}
+        comment={props.shortsData.comment}
+        commentList={props.commentList}
         commentState={commentState}
         visibleComment={visibleCommentState}
       />

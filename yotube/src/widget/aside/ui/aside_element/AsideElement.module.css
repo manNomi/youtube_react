@@ -23,3 +23,11 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
+
+.svg {
+  width: 30px;
+  height: 30px;
+  background-size: cover; /* 또는 contain */
+  background-repeat: no-repeat; /* 반복 방지 */
+  background-position: center;
+}

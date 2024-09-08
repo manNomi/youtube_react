@@ -1,6 +1,6 @@
 const getShortsCommentData = () => {
   const index = 15;
-  const contentList = [];
+  const commentList = [];
   for (let i = 0; i < index; i++) {
     const content = {
       comment_index: i,
@@ -12,9 +12,9 @@ const getShortsCommentData = () => {
       dislike: 124,
       date: 123123,
     };
-    contentList.push(content);
+    commentList.push(content);
   }
-  return contentList;
+  return commentList;
 };
 
 export default getShortsCommentData;
