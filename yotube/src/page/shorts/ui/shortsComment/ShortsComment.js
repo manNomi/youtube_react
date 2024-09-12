@@ -2,7 +2,7 @@ import css from "./ShortsComment.module.css";
 import { setNumber } from "../../../../shared/setNumber/setNumber.js";
 import Comment from "../../../../widget/comment/ui/Comment.js";
 import CommentInput from "../../../../widget/comment_input/ui/CommentInput.js";
-import useShortsCommentData from "../../model/useShortsCommentData/useShortsCommentData.js";
+import useShortsCommentData from "../../../../entities/useShortsCommentData/useShortsCommentData.js";
 import Loading from "../../../../shared/loading/Loading.js";
 import arraySrc from "../../asset/array.svg";
 

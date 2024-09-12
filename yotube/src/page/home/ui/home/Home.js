@@ -1,6 +1,6 @@
 import css from "./Home.module.css";
 import Video from "../video/Video.js";
-import useHomeData from "../../model/useHomeData/useHomeData.js";
+import useHomeData from "../../../../entities/useHomeData/useHomeData.js";
 import Loading from "../../../../shared/loading/Loading.js";
 const Home = (props) => {
   const [loading, error, videoList] = useHomeData();

@@ -1,4 +1,4 @@
-import useCommentData from "../../model/useCommentData/useCommentData.js";
+import useCommentData from "../../../../entities/useDetailCommentData/useCommentData.js";
 import CommentInput from "../../../../widget/comment_input/ui/CommentInput.js";
 import Comment from "../../../../widget/comment/ui/Comment.js";
 const DetailComment = (props) => {

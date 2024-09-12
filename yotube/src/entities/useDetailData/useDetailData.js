@@ -1,3 +1,5 @@
+import React from "react";
+
 const getDetailData = () => {
   const detailData = {
     title:
@@ -19,4 +21,24 @@ const getDetailData = () => {
   return detailData;
 };
 
-export default getDetailData;
+const useDetailData = () => {
+  const [detailList, setDetailList] = React.useState([]);
+
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const detailData = getDetailData();
+        setDetailList(detailData);
+        setLoading(false);
+      } catch (error) {
+        setError(true);
+      }
+    };
+    fetchData();
+  }, []);
+  return [detailList, loading, error];
+};
+
+export default useDetailData;

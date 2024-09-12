@@ -1,4 +1,4 @@
-import useDetailData from "../../model/useDetailData/useDetailData.js";
+import useDetailData from "../../../../entities/useDetailData/useDetailData.js";
 import css from "./Detail.module.css";
 import DetailComment from "../detailComment/DetailComment.js";
 import Loading from "../../../../shared/loading/Loading.js";
