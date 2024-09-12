@@ -1,14 +1,12 @@
-import css from "./HoverIcon.module.css";
+import { Container, Box, Icon } from "./style";
+
 const HoverIcon = ({ resource }) => {
   return (
-    <div className={css.container}>
-      <div className={css.box}>
-        <div
-          className={`${css.icon} svg`}
-          style={{ backgroundImage: `url(${resource})` }}
-        />
-      </div>
-    </div>
+    <Container>
+      <Box>
+        <Icon src={resource} />
+      </Box>
+    </Container>
   );
 };
 export default HoverIcon;
