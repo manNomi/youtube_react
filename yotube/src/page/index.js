@@ -3,23 +3,26 @@ import Home from "./home";
 import Detail from "./detail";
 import Aside from "../widget/aside";
 import React from "react";
-
-const useMainState = () => {
-  const [pageState, setPageState] = React.useState("Home");
-  const pageChangeEvent = (page) => {
-    setPageState(page);
-  };
-  return [pageState, pageChangeEvent];
-};
+import ExceptPage from "./except";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 const Page = () => {
-  const [pageState, pageChangeEvent] = useMainState();
+  const navigate = useNavigate();
+  const pageChangeEvent = (page) => {
+    navigate(`/${page.toLowerCase()}`);
+  };
   return (
     <>
       <Aside onPageClick={pageChangeEvent} />
-      {pageState === "Home" && <Home onPageClick={pageChangeEvent} />}
-      {pageState === "Shorts" && <Shorts />}
-      {pageState === "Detail" && <Detail />}
+      <Routes>
+        <Route path="/" element={<Home onPageClick={pageChangeEvent} />} />
+        <Route path="/shorts" element={<Shorts />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/subscribe" element={<ExceptPage />} />
+        <Route path="/youtubeMusic" element={<ExceptPage />} />
+        <Route path="/myVideo" element={<ExceptPage />} />
+        <Route path="/offline" element={<ExceptPage />} />
+      </Routes>
     </>
   );
 };

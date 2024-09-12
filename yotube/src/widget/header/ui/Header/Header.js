@@ -13,7 +13,7 @@ const Header = () => {
           className={css.logo_img}
           style={{ backgroundImage: `url(${logoIcon})` }}
           onClick={() => {
-            window.location.reload();
+            window.location.href = "/";
           }}
         />
       </div>

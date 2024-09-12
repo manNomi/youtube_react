@@ -1,11 +1,15 @@
 import Header from "../widget/header";
 import Page from "../page";
 import "../shared/css/base.css";
+import { BrowserRouter } from "react-router-dom";
+
 const App = () => {
   return (
     <>
-      <Header />
-      <Page />
+      <BrowserRouter>
+        <Header />
+        <Page />
+      </BrowserRouter>
     </>
   );
 };

@@ -1,7 +1,7 @@
 const iconData = [
   {
     content: "홈",
-    type: "Home",
+    type: "",
     resource: require("../assets/home.svg"),
   },
   {

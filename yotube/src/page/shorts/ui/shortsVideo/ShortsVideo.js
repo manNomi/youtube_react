@@ -11,7 +11,7 @@ import settingIcon from "../../asset/setting.svg";
 import commentIcon from "../../asset/comment.svg";
 
 const ShortsVideo = (props) => {
-  const [commentState, visibleCommentState] = useCommentState();
+  const [commentClickRef, commentState, handleClickOutside] = useCommentState();
 
   return (
     <article className={css.group}>
@@ -55,7 +55,9 @@ const ShortsVideo = (props) => {
         <div className={css.icon_box}>
           <div
             className={css.icon_border}
-            onClick={() => visibleCommentState(true)}>
+            ref={(el) => (commentClickRef.current["comment_btn"] = el)}
+            id="comment_btn"
+            onClick={() => handleClickOutside(true, "comment_btn")}>
             <div
               className={css.icon}
               style={{ backgroundImage: `url(${commentIcon})` }}
@@ -77,13 +79,15 @@ const ShortsVideo = (props) => {
           </div>
         </div>
       </div>
-      <ShortsComment
-        userImg={props.shortsData.userImg}
-        comment={props.shortsData.comment}
-        commentList={props.commentList}
-        commentState={commentState}
-        visibleComment={visibleCommentState}
-      />
+      {commentState && (
+        <ShortsComment
+          userImg={props.shortsData.userImg}
+          comment={props.shortsData.comment}
+          commentList={props.commentList}
+          handleClickOutside={handleClickOutside}
+          commentClickRef={commentClickRef}
+        />
+      )}
     </article>
   );
 };

@@ -1,9 +1,12 @@
 import React from "react";
 const useCommentState = () => {
   const [commentState, setCommentState] = React.useState(false);
-  const visibleCommentState = (type) => {
-    setCommentState(type);
+  const commentClickRef = React.useRef({});
+  const handleClickOutside = (type, id) => {
+    if (commentClickRef.current[id]) {
+      setCommentState(type);
+    }
   };
-  return [commentState, visibleCommentState];
+  return [commentClickRef, commentState, handleClickOutside];
 };
 export default useCommentState;

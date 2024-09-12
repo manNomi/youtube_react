@@ -1,6 +1,7 @@
 import useDetailData from "../../model/useDetailData/useDetailData.js";
 import css from "./Detail.module.css";
 import DetailComment from "../detailComment/DetailComment.js";
+import Loading from "../../../../shared/loading/Loading.js";
 import { setNumber, setDate } from "../../../../shared/setNumber/setNumber.js";
 
 import alertSrc from "../../asset/alert.svg";
@@ -13,9 +14,8 @@ import arraySrc from "../../asset/array.svg";
 
 const Detail = () => {
   const [detailList, loading, error] = useDetailData();
-  console.log(detailList);
   return loading ? (
-    <div>로딩중</div>
+    <Loading />
   ) : error ? (
     <div>에러</div>
   ) : (
