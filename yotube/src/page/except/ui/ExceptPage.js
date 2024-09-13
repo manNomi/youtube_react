@@ -1,9 +1,9 @@
-import css from "./ExceptPage.module.css";
+import { NotWork } from "./style.js";
 const ExceptPage = () => {
   return (
-    <div className={css.root}>
+    <NotWork>
       <h1>준비중입니다</h1>
-    </div>
+    </NotWork>
   );
 };
 

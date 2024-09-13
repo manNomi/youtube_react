@@ -1,4 +1,6 @@
-.comment_frame {
+import styled from "styled-components";
+
+export const CommentFrame = styled.dialog`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -9,49 +11,52 @@
   top: 0;
   left: 0;
   z-index: 1000;
-}
+`;
 
-.content {
+export const Content = styled.article`
   background-color: var(--color-shorts-comment) !important;
   color: white !important;
   border-radius: 15px;
   width: 450px;
   height: 600px;
-}
+`;
 
-.comment_nav {
+export const CommentNav = styled.nav`
   width: 100%;
   height: 10%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid;
   justify-content: space-around;
-}
+`;
 
-.comment_box {
+export const CommentBox = styled.div`
   width: 100%;
   height: 80%;
   overflow-y: auto;
-}
 
-.comment_box::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+`;
 
-.comment_icon_box {
+export const CommentIconBox = styled.div`
   display: flex;
   align-items: center;
-}
+`;
 
-.input_box {
+export const InputBox = styled.div`
   width: 100%;
   height: 10%;
   border-top: 1px solid;
-}
+`;
 
-.comment_exit {
+export const CommentExit = styled.button`
   color: white !important;
   font-size: x-large;
   margin-left: 30px;
-}
+  background: none;
+  border: none;
+  cursor: pointer;
+`;

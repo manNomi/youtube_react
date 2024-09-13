@@ -1,4 +1,6 @@
-.group {
+import styled from "styled-components";
+
+export const Group = styled.article`
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -7,48 +9,47 @@
   min-width: 0px;
   padding: 5px;
   cursor: pointer;
-}
+`;
 
-.img {
+export const Img = styled.img`
   border-radius: 15px;
   padding: 5px;
-}
+`;
 
-/* 아이템들 가운데 정렬하기 */
-.title {
+export const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: start;
-}
+`;
 
-.user_img {
+export const UserImg = styled.img`
   width: var(--thumb-size);
   height: var(--thumb-size);
   border-radius: 50%;
-}
+`;
 
-.text {
+export const Text = styled.p`
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-}
+`;
 
-.text_name {
+export const TextName = styled.p`
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-}
+`;
 
-.text_small {
+export const TextSmall = styled.p`
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   color: var(--color-thumb-text-small);
-}
+`;
 
-.text_small_box {
+export const TextSmallBox = styled.div`
   display: flex;
-}
+`;

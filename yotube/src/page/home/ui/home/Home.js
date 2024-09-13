@@ -1,7 +1,8 @@
-import css from "./Home.module.css";
 import Video from "../video/Video.js";
 import useHomeData from "../../../../entities/useHomeData/useHomeData.js";
 import Loading from "../../../../shared/loading/Loading.js";
+import { Root } from "./style.js"; // 새로 정의한 스타일 임포트
+
 const Home = (props) => {
   const [loading, error, videoList] = useHomeData();
   return loading ? (
@@ -9,11 +10,16 @@ const Home = (props) => {
   ) : error ? (
     <div>에러</div>
   ) : (
-    <main className={css.root}>
+    <Root>
       {videoList.map((videoData) => (
-        <Video videoData={videoData} onPageClick={props.onPageClick} />
+        <Video
+          key={videoData.id}
+          videoData={videoData}
+          onPageClick={props.onPageClick}
+        />
       ))}
-    </main>
+    </Root>
   );
 };
+
 export default Home;

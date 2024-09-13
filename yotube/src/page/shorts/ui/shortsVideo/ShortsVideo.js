@@ -1,4 +1,20 @@
-import css from "./ShortsVideo.module.css";
+import {
+  Group,
+  Video,
+  Img,
+  VideoIconList,
+  VideoIcon,
+  UserImg,
+  SubscribeIcon,
+  Title,
+  User,
+  Text,
+  IconBox,
+  IconContainer,
+  Icon,
+  IconBorder,
+  TextIconList,
+} from "./style.js";
 import useCommentState from "../../model/useCommentState/useCommentState.js";
 import { setNumber } from "../../../../shared/setNumber/setNumber.js";
 import ShortsComment from "../shortsComment/ShortsComment.js";
@@ -14,71 +30,55 @@ const ShortsVideo = (props) => {
   const [commentClickRef, commentState, handleClickOutside] = useCommentState();
 
   return (
-    <article className={css.group}>
-      <div className={css.video}>
-        <img
-          className={css.img}
-          src={props.shortsData.thumbImg}
-          alt="Video Thumbnail"
-        />
-        <div className={css.video_icon_list}>
-          <img className={css.video_icon} src={playIcon} alt="Play Icon" />
-          <img className={css.video_icon} src={soundIcon} alt="Sound Icon" />
-        </div>
-        <div className={css.title}>
-          <div className={css.user}>
-            <img
-              className={css.user_img}
-              src={props.shortsData.userImg}
-              alt="UserImage"
-            />
-            <p className={css.text}>{"@" + props.shortsData.userName}</p>
-            <div className={css.subscribe_icon}>구독</div>
-          </div>
-          <div className={css.text}>{props.shortsData.title}</div>
-        </div>
-      </div>
-      <div className={css.icon_container}>
-        <div className={css.icon_box}>
-          <div className={css.icon_border}>
-            <img className={css.icon} src={likeIcon} alt="Like Icon" />
-          </div>
-          <p className={css.text_icon_list}>
-            {setNumber(props.shortsData.like)}
-          </p>
-        </div>
-        <div className={css.icon_box}>
-          <div className={css.icon_border}>
-            <img className={css.icon} src={dislikeIcon} alt="Dislike Icon" />
-          </div>
-        </div>
-        <div className={css.icon_box}>
-          <div
-            className={css.icon_border}
+    <Group>
+      <Video>
+        <Img src={props.shortsData.thumbImg} alt="Video Thumbnail" />
+        <VideoIconList>
+          <VideoIcon src={playIcon} alt="Play Icon" />
+          <VideoIcon src={soundIcon} alt="Sound Icon" />
+        </VideoIconList>
+        <Title>
+          <User>
+            <UserImg src={props.shortsData.userImg} alt="UserImage" />
+            <Text>{"@" + props.shortsData.userName}</Text>
+            <SubscribeIcon>구독</SubscribeIcon>
+          </User>
+          <Text>{props.shortsData.title}</Text>
+        </Title>
+      </Video>
+      <IconContainer>
+        <IconBox>
+          <IconBorder>
+            <Icon src={likeIcon} alt="Like Icon" />
+          </IconBorder>
+          <TextIconList>{setNumber(props.shortsData.like)}</TextIconList>
+        </IconBox>
+        <IconBox>
+          <IconBorder>
+            <Icon src={dislikeIcon} alt="Dislike Icon" />
+          </IconBorder>
+        </IconBox>
+        <IconBox>
+          <IconBorder
             ref={(el) => (commentClickRef.current["comment_btn"] = el)}
             id="comment_btn"
             onClick={() => handleClickOutside(true, "comment_btn")}>
-            <div
-              className={css.icon}
-              style={{ backgroundImage: `url(${commentIcon})` }}
-            />
-          </div>
-          <p className={css.text_icon_list}>
-            {setNumber(props.shortsData.comment)}
-          </p>
-        </div>
-        <div className={css.icon_box}>
-          <div className={css.icon_border}>
-            <img className={css.icon} src={shareIcon} alt="Share Icon" />
-          </div>
-          <p className={css.text_icon_list}>공유</p>
-        </div>
-        <div className={css.icon_box}>
-          <div className={css.icon_border}>
-            <img className={css.icon} src={settingIcon} alt="Setting Icon" />
-          </div>
-        </div>
-      </div>
+            <Icon style={{ backgroundImage: `url(${commentIcon})` }} />
+          </IconBorder>
+          <TextIconList>{setNumber(props.shortsData.comment)}</TextIconList>
+        </IconBox>
+        <IconBox>
+          <IconBorder>
+            <Icon src={shareIcon} alt="Share Icon" />
+          </IconBorder>
+          <TextIconList>공유</TextIconList>
+        </IconBox>
+        <IconBox>
+          <IconBorder>
+            <Icon src={settingIcon} alt="Setting Icon" />
+          </IconBorder>
+        </IconBox>
+      </IconContainer>
       {commentState && (
         <ShortsComment
           userImg={props.shortsData.userImg}
@@ -88,7 +88,7 @@ const ShortsVideo = (props) => {
           commentClickRef={commentClickRef}
         />
       )}
-    </article>
+    </Group>
   );
 };
 

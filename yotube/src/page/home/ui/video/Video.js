@@ -1,27 +1,32 @@
-import css from "./Video.module.css";
 import { setView, setDate } from "../../../../shared/setNumber/setNumber.js";
+import {
+  Group,
+  Img,
+  Title,
+  UserImg,
+  Text,
+  TextName,
+  TextSmall,
+  TextSmallBox,
+} from "./style.js"; // 새로 정의한 스타일 임포트
 
 const Video = (props) => {
   return (
-    <article className={css.group} onClick={() => props.onPageClick("detail")}>
-      <img className={css.img} src={props.videoData.thumbImg} alt="" />
-      <div className={css.title}>
-        <img className={css.user_img} src={props.videoData.userImg} alt="" />
+    <Group onClick={() => props.onPageClick("detail")}>
+      <Img src={props.videoData.thumbImg} alt="" />
+      <Title>
+        <UserImg src={props.videoData.userImg} alt="" />
         <div>
-          <p className={css.text}>{props.videoData.title}</p>
-          <p className={css.text_name}>{props.videoData.userName}</p>
-          <div className={css.text_small_box}>
-            <p className={css.text_small}>
-              {setView(props.videoData.thumbView)}
-            </p>
-            <p className={css.text_small}>•</p>
-            <p className={css.text_small}>
-              {setDate(props.videoData.thumbDate)}
-            </p>
-          </div>
+          <Text>{props.videoData.title}</Text>
+          <TextName>{props.videoData.userName}</TextName>
+          <TextSmallBox>
+            <TextSmall>{setView(props.videoData.thumbView)}</TextSmall>
+            <TextSmall>•</TextSmall>
+            <TextSmall>{setDate(props.videoData.thumbDate)}</TextSmall>
+          </TextSmallBox>
         </div>
-      </div>
-    </article>
+      </Title>
+    </Group>
   );
 };
 

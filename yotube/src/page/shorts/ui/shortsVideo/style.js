@@ -1,4 +1,6 @@
-.group {
+import styled from "styled-components";
+
+export const Group = styled.article`
   display: flex;
   width: var(--shorts-width);
   height: var(--shorts-height);
@@ -6,27 +8,27 @@
   cursor: pointer;
   position: relative;
   margin-bottom: 20px;
-}
+`;
 
-.video {
+export const Video = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-}
+`;
 
-.img {
+export const Img = styled.img`
   border-radius: 15px;
   width: 100%;
   height: 100%;
-}
+`;
 
-.video_icon_list {
+export const VideoIconList = styled.div`
   position: absolute;
   display: flex;
   top: 5%;
-}
+`;
 
-.video_icon {
+export const VideoIcon = styled.img`
   opacity: 0.3;
   cursor: pointer;
   margin: 5px;
@@ -34,19 +36,19 @@
   height: var(--shorts-icon-big-height);
   background-color: var(--color-white);
   border-radius: 50%;
-}
 
-.video_icon:hover {
-  opacity: 0.7;
-}
+  &:hover {
+    opacity: 0.7;
+  }
+`;
 
-.user_img {
+export const UserImg = styled.img`
   width: var(--thumb-size);
   height: var(--thumb-size);
   border-radius: 50%;
-}
+`;
 
-.subscribe_icon {
+export const SubscribeIcon = styled.div`
   width: 40px;
   height: 25px;
   border-radius: 15px;
@@ -54,40 +56,40 @@
   color: black !important;
   text-align: center;
   line-height: 25px;
-}
+`;
 
-.title {
+export const Title = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 80%;
   margin: 10px;
-}
+`;
 
-.user {
+export const User = styled.div`
   display: flex;
   align-items: center;
-}
+`;
 
-.text {
+export const Text = styled.p`
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   color: white !important;
   margin: 3px;
-}
+`;
 
-.icon_box {
+export const IconBox = styled.div`
   width: var(--shorts-aside-width);
   height: var(--shorts-aside-height);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+`;
 
-.icon_container {
+export const IconContainer = styled.div`
   position: absolute;
   left: 100%;
   margin-left: 30px;
@@ -96,9 +98,9 @@
   justify-content: end;
   width: 50px;
   height: 100%;
-}
+`;
 
-.icon {
+export const Icon = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -112,9 +114,9 @@
   flex-shrink: 0;
   background-repeat: no-repeat;
   background-size: contain;
-}
+`;
 
-.icon_border {
+export const IconBorder = styled.div`
   width: var(--shorts-icon-big-width);
   height: var(--shorts-icon-big-height);
   display: flex;
@@ -122,17 +124,12 @@
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
-}
 
-.icon_border:hover {
-  background-color: var(--color-hover);
-}
-
-@keyframes bright_text {
-  from {
-    background-color: #00ff0000;
-  }
-  to {
+  &:hover {
     background-color: var(--color-hover);
   }
-}
+`;
+
+export const TextIconList = styled.p`
+  color: white;
+`;
