@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Group = styled.article`
   display: flex;
-  width: var(--shorts-width);
-  height: var(--shorts-height);
+  width: ${({ theme }) => theme.sizes.shortsWidth};
+  height: ${({ theme }) => theme.sizes.shortsHeight};
   flex-direction: column;
   cursor: pointer;
   position: relative;
@@ -32,9 +32,9 @@ export const VideoIcon = styled.img`
   opacity: 0.3;
   cursor: pointer;
   margin: 5px;
-  width: var(--shorts-icon-big-width);
-  height: var(--shorts-icon-big-height);
-  background-color: var(--color-white);
+  width: ${({ theme }) => theme.sizes.shortsIconBigWidth};
+  height: ${({ theme }) => theme.sizes.shortsIconBigHeight};
+  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 50%;
 
   &:hover {
@@ -43,8 +43,8 @@ export const VideoIcon = styled.img`
 `;
 
 export const UserImg = styled.img`
-  width: var(--thumb-size);
-  height: var(--thumb-size);
+  width: ${({ theme }) => theme.sizes.thumbSize};
+  height: ${({ theme }) => theme.sizes.thumbSize};
   border-radius: 50%;
 `;
 
@@ -52,8 +52,8 @@ export const SubscribeIcon = styled.div`
   width: 40px;
   height: 25px;
   border-radius: 15px;
-  background-color: white !important;
-  color: black !important;
+  background-color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.black};
   text-align: center;
   line-height: 25px;
 `;
@@ -76,13 +76,13 @@ export const Text = styled.p`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  color: white !important;
+  color: ${({ theme }) => theme.colors.white};
   margin: 3px;
 `;
 
 export const IconBox = styled.div`
-  width: var(--shorts-aside-width);
-  height: var(--shorts-aside-height);
+  width: ${({ theme }) => theme.sizes.shortsAsideWidth};
+  height: ${({ theme }) => theme.sizes.shortsAsideHeight};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,18 +107,19 @@ export const Icon = styled.button`
   align-items: center;
   border: none;
   cursor: pointer;
-  width: var(--shorts-icon-width);
-  height: var(--shorts-icon-height);
+  width: ${({ theme }) => theme.sizes.shortsIconWidth};
+  height: ${({ theme }) => theme.sizes.shortsIconHeight};
   border-radius: 50%;
   margin: 1px;
   flex-shrink: 0;
   background-repeat: no-repeat;
   background-size: contain;
+  background-image: url(${(props) => props.$src});
 `;
 
 export const IconBorder = styled.div`
-  width: var(--shorts-icon-big-width);
-  height: var(--shorts-icon-big-height);
+  width: ${({ theme }) => theme.sizes.shortsIconBigWidth};
+  height: ${({ theme }) => theme.sizes.shortsIconBigHeight};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,10 +127,10 @@ export const IconBorder = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: var(--color-hover);
+    background-color: ${({ theme }) => theme.colors.hover};
   }
 `;
 
 export const TextIconList = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
 `;

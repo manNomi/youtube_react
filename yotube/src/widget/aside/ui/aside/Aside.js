@@ -1,9 +1,9 @@
 import iconData from "../../consts/asideData.js";
 import AsideIcon from "../aside_element/AsideElement.js";
-import css from "./Aside.module.css";
+import { AsideTag } from "../aside/style.js";
 const Aside = (props) => {
   return (
-    <aside className={css.root}>
+    <AsideTag>
       {iconData.map((icon) => (
         <AsideIcon
           content={icon.content}
@@ -13,7 +13,7 @@ const Aside = (props) => {
           }}
         />
       ))}
-    </aside>
+    </AsideTag>
   );
 };
 

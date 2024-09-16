@@ -2,10 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 const brightIcon = keyframes`
   from {
-    background-color: var(--color-gray);
+    background-color: ${({ theme }) => theme.colors.gray};
   }
   to {
-    background-color: var(--color-hover);
+    background-color: ${({ theme }) => theme.colors.hover};
   }
 `;
 
@@ -18,8 +18,8 @@ export const Frame = styled.main`
   justify-content: center;
   align-items: start;
 
-  @media (min-width: 790px) {
-    margin-left: var(--aside-size);
+  @media (min-width: ${({ theme }) => theme.sizes.windowSmallSize}) {
+    margin-left: ${({ theme }) => theme.sizes.asideSize};
   }
 `;
 
@@ -73,8 +73,8 @@ export const User = styled.div`
 `;
 
 export const UserImg = styled.img`
-  width: var(--thumb-size);
-  height: var(--thumb-size);
+  width: ${({ theme }) => theme.sizes.thumbSize};
+  height: ${({ theme }) => theme.sizes.thumbSize};
   border-radius: 50%;
 `;
 
@@ -94,7 +94,7 @@ export const Text = styled.p`
 
 export const TextSmall = styled.p`
   font-size: small;
-  color: var(--color-gray);
+  color: ${({ theme }) => theme.colors.gray};
 `;
 
 export const IconBorder = styled.button`
@@ -107,7 +107,7 @@ export const IconBorder = styled.button`
   border-radius: 15px;
   cursor: pointer;
   color: white !important;
-  background-color: var(--color-gray);
+  background-color: ${({ theme }) => theme.colors.gray};
   margin-right: 10px;
 
   &:hover {
@@ -126,7 +126,7 @@ export const LikeBox = styled.div`
   justify-content: end;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
-  background-color: var(--color-gray);
+  background-color: ${({ theme }) => theme.colors.gray};
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -142,7 +142,7 @@ export const DislikeBox = styled.div`
   justify-content: center;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: var(--color-gray);
+  background-color: ${({ theme }) => theme.colors.gray};
   padding-top: 10px;
   padding-bottom: 10px;
   margin-right: 5px;
@@ -157,11 +157,11 @@ export const Like = styled.div`
   justify-content: end;
   align-items: center;
   border-right: solid 1px white;
-  background-color: var(--color-x) !important;
+  background-color: ${({ theme }) => theme.colors.transparent} !important;
 `;
 
 export const Dislike = styled.div`
-  background-color: var(--color-x) !important;
+  background-color: ${({ theme }) => theme.colors.transparent} !important;
 `;
 
 export const Icon = styled.img`
@@ -171,8 +171,8 @@ export const Icon = styled.img`
   align-items: center;
   border: none;
   cursor: pointer;
-  width: var(--detail-icon-width);
-  height: var(--detail-icon-height);
+  width: ${({ theme }) => theme.sizes.detailIconWidth};
+  height: ${({ theme }) => theme.sizes.detailIconHeight};
   border-radius: 50%;
   margin: 1px;
   flex-shrink: 0;
@@ -181,7 +181,7 @@ export const Icon = styled.img`
 `;
 
 export const Introduce = styled.div`
-  background-color: var(--color-gray);
+  background-color: ${({ theme }) => theme.colors.gray};
   border-radius: 3px;
   margin: 10px;
   padding: 10px;

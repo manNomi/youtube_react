@@ -4,7 +4,7 @@ export const HeaderContainer = styled.header`
   top: 0;
   width: 100%;
   position: sticky;
-  height: var(--header-size);
+  height: ${({ theme }) => theme.sizes.headerSize};
   display: flex;
   justify-content: space-between;
   z-index: 1000;

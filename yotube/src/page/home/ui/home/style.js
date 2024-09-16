@@ -9,7 +9,7 @@ export const Root = styled.main`
   align-items: center;
   margin-left: 0;
 
-  @media (min-width: 790px) {
-    margin-left: var(--aside-size);
+  @media (min-width: ${({ theme }) => theme.sizes.windowSmallSize}) {
+    margin-left: ${({ theme }) => theme.sizes.asideSize};
   }
 `;

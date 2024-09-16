@@ -6,7 +6,7 @@ export const Group = styled.article`
   flex-direction: column;
   flex: 1 1 300px;
   max-width: 500px;
-  min-width: 0px;
+  min-width: 0;
   padding: 5px;
   cursor: pointer;
 `;
@@ -23,8 +23,8 @@ export const Title = styled.div`
 `;
 
 export const UserImg = styled.img`
-  width: var(--thumb-size);
-  height: var(--thumb-size);
+  width: ${({ theme }) => theme.sizes.thumbSize};
+  height: ${({ theme }) => theme.sizes.thumbSize};
   border-radius: 50%;
 `;
 
@@ -47,7 +47,7 @@ export const TextSmall = styled.p`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-  color: var(--color-thumb-text-small);
+  color: ${({ theme }) => theme.colors.thumbTextSmall};
 `;
 
 export const TextSmallBox = styled.div`

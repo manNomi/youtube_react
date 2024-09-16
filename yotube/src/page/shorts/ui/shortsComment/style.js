@@ -14,7 +14,7 @@ export const CommentFrame = styled.dialog`
 `;
 
 export const Content = styled.article`
-  background-color: var(--color-shorts-comment) !important;
+  background-color: ${({ theme }) => theme.colors.shortsComment} !important;
   color: white !important;
   border-radius: 15px;
   width: 450px;
@@ -26,7 +26,7 @@ export const CommentNav = styled.nav`
   height: 10%;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
   justify-content: space-around;
 `;
 
@@ -49,7 +49,7 @@ export const CommentIconBox = styled.div`
 export const InputBox = styled.div`
   width: 100%;
   height: 10%;
-  border-top: 1px solid;
+  border-top: 1px solid ${({ theme }) => theme.colors.gray};
 `;
 
 export const CommentExit = styled.button`

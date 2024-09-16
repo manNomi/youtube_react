@@ -1,5 +1,5 @@
-import css from "./Loading.module.css";
+import { LoadingTag } from "./style";
 const Loading = () => {
-  return <div className={css.root}>로딩중</div>;
+  return <LoadingTag>로딩중</LoadingTag>;
 };
 export default Loading;

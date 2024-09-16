@@ -1,13 +1,11 @@
-import css from "./AsideElement.module.css";
+import { IconButton, SvgIcon, IconText } from "./style.js";
 const AsideIcon = (props) => {
   return (
-    <button className={css.icon} onClick={props.onClick}>
-      <div
-        className={css.svg}
-        style={{ backgroundImage: `url(${props.resource.default})` }}></div>
-
-      {props.content && <p className={css.icon_text}>{props.content}</p>}
-    </button>
+    <IconButton onClick={props.onClick}>
+      <SvgIcon style={{ backgroundImage: `url(${props.resource.default})` }} />
+      {props.content && <IconText>{props.content}</IconText>}
+    </IconButton>
   );
 };
+
 export default AsideIcon;

@@ -1,14 +1,16 @@
-import css from "./CommentInput.module.css";
+import { Write, UserImg, WriteInput } from "./style.js";
+
 const CommentInput = (props) => {
   return (
-    <div className={css.write}>
-      <img className={css.img} src={props.userImg} alt="userImg" />
-      <input
+    <Write>
+      <UserImg src={props.userImg} alt="userImg" />
+      <WriteInput
         type="text"
         placeholder="댓글 추가 ..."
-        className={`${css.write_input} ${props.colorDark && css.dark_input}`}
+        colorDark={props.colorDark}
       />
-    </div>
+    </Write>
   );
 };
+
 export default CommentInput;

@@ -5,9 +5,8 @@ export const Container = styled.div`
   height: 100%;
   display: none;
   align-items: center;
-  flex: 0 1 var(--search-size);
+  flex: 0 1 ${({ theme }) => theme.sizes.searchSize};
 
-  /* 반응형 디자인 */
   @media (min-width: 500px) {
     display: flex;
   }
@@ -19,13 +18,13 @@ export const Box = styled.div`
   position: relative;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
-  border: 1px solid var(--color-placeHorder);
+  border: 1px solid ${({ theme }) => theme.colors.placeholder};
   display: flex;
   align-items: center;
 `;
 
 export const Hidden = styled.div`
-  width: var(--logo-size-small);
+  width: ${({ theme }) => theme.sizes.logoSizeSmall};
   height: 0;
 `;
 
@@ -38,9 +37,8 @@ export const Outline = styled.div`
   align-items: center;
   border: none;
 
-  /* 포커스된 상태에서 스타일 적용 */
   ${Container}:focus-within & {
-    border: 1px solid var(--color-focus-blue);
+    border: 1px solid ${({ theme }) => theme.colors.focusBlue};
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
   }
@@ -48,7 +46,7 @@ export const Outline = styled.div`
     border: none;
   }
   ${Container}:focus-within ${Hidden} {
-    height: var(--logo-size-small);
+    height: ${({ theme }) => theme.sizes.logoSizeSmall};
   }
 `;
 
@@ -62,11 +60,11 @@ export const Input = styled.input`
   left: 10px;
   top: 50%;
   transform: translate(0, -50%);
-  color: var(--color-black);
-  background-color: var(--color-x);
+  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.transparent};
 
   &::placeholder {
-    color: var(--color-placeHorder);
+    color: ${({ theme }) => theme.colors.placeholder};
   }
 `;
 
@@ -75,7 +73,7 @@ export const Btn = styled.button`
   height: 80%;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
-  border: 1px solid var(--color-placeHorder);
+  border: 1px solid ${({ theme }) => theme.colors.placeholder};
   border-left: none;
   display: flex;
   align-items: center;
@@ -84,6 +82,6 @@ export const Btn = styled.button`
 `;
 
 export const BtnImg = styled.div`
-  width: var(--logo-size-small);
-  height: var(--logo-size-small);
+  width: ${({ theme }) => theme.sizes.logoSizeSmall};
+  height: ${({ theme }) => theme.sizes.logoSizeSmall};
 `;

@@ -1,20 +1,21 @@
+import React from "react";
 import {
   Group,
   Video,
   Img,
   VideoIconList,
   VideoIcon,
-  UserImg,
-  SubscribeIcon,
   Title,
   User,
+  UserImg,
+  SubscribeIcon,
   Text,
-  IconBox,
   IconContainer,
-  Icon,
+  IconBox,
   IconBorder,
-  TextIconList,
-} from "./style.js";
+  Icon,
+} from "./style.js"; // 스타일 정의를 import
+
 import useCommentState from "../../model/useCommentState/useCommentState.js";
 import { setNumber } from "../../../../shared/setNumber/setNumber.js";
 import ShortsComment from "../shortsComment/ShortsComment.js";
@@ -49,13 +50,13 @@ const ShortsVideo = (props) => {
       <IconContainer>
         <IconBox>
           <IconBorder>
-            <Icon src={likeIcon} alt="Like Icon" />
+            <Icon $src={likeIcon} alt="Like Icon" />
           </IconBorder>
-          <TextIconList>{setNumber(props.shortsData.like)}</TextIconList>
+          <p>{setNumber(props.shortsData.like)}</p>
         </IconBox>
         <IconBox>
           <IconBorder>
-            <Icon src={dislikeIcon} alt="Dislike Icon" />
+            <Icon $src={dislikeIcon} alt="Dislike Icon" />
           </IconBorder>
         </IconBox>
         <IconBox>
@@ -63,19 +64,19 @@ const ShortsVideo = (props) => {
             ref={(el) => (commentClickRef.current["comment_btn"] = el)}
             id="comment_btn"
             onClick={() => handleClickOutside(true, "comment_btn")}>
-            <Icon style={{ backgroundImage: `url(${commentIcon})` }} />
+            <Icon $src={commentIcon} />
           </IconBorder>
-          <TextIconList>{setNumber(props.shortsData.comment)}</TextIconList>
+          <p>{setNumber(props.shortsData.comment)}</p>
         </IconBox>
         <IconBox>
           <IconBorder>
-            <Icon src={shareIcon} alt="Share Icon" />
+            <Icon $src={shareIcon} alt="Share Icon" />
           </IconBorder>
-          <TextIconList>공유</TextIconList>
+          <p>공유</p>
         </IconBox>
         <IconBox>
           <IconBorder>
-            <Icon src={settingIcon} alt="Setting Icon" />
+            <Icon $src={settingIcon} alt="Setting Icon" />
           </IconBorder>
         </IconBox>
       </IconContainer>

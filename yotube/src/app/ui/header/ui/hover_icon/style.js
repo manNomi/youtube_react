@@ -2,10 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 const brightText = keyframes`
   from {
-      background-color: var(--color-x);
+      background-color: ${({ theme }) => theme.colors.transparent};
   }
   to {
-    background-color: var(--color-hover);
+    background-color: ${({ theme }) => theme.colors.hover};
   }
 `;
 
