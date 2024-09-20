@@ -4,7 +4,7 @@ import HeaderIconList from "../header_icon_list/HeaderIconList.js";
 import settingIcon from "../../asset/setting.svg";
 import logoIcon from "../../asset/logo.svg";
 import { HeaderContainer, LogoBox, LogoImg } from "./style.js";
-const Header = () => {
+const Header = (props) => {
   return (
     <HeaderContainer>
       <LogoBox>
@@ -12,7 +12,7 @@ const Header = () => {
         <LogoImg src={logoIcon} onClick={() => (window.location.href = "/")} />
       </LogoBox>
       <SearchContainer />
-      <HeaderIconList />
+      <HeaderIconList darkModeClick={props.darkModeClick} />
     </HeaderContainer>
   );
 };

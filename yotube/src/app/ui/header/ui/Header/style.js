@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   z-index: 1000;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
 `;
 
 export const LogoBox = styled.div`

@@ -1,7 +1,7 @@
 import { NotWork } from "./style.js";
-const ExceptPage = () => {
+const ExceptPage = (props) => {
   return (
-    <NotWork>
+    <NotWork $dark={props.dark}>
       <h1>준비중입니다</h1>
     </NotWork>
   );

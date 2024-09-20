@@ -9,7 +9,8 @@ export const Root = styled.main`
   justify-content: center;
   align-items: center;
   margin-left: 0;
-
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  color: ${({ theme }) => theme.colors.text};
   @media (min-width: ${({ theme }) => theme.sizes.windowSmallSize}) {
     margin-left: ${({ theme }) => theme.sizes.asideSize};
   }

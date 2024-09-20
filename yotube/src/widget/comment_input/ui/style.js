@@ -5,23 +5,19 @@ export const Write = styled.div`
 `;
 
 export const WriteInput = styled.input`
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  color: ${({ theme }) => theme.colors.text};
+
   width: 100%;
   border: none;
-  border-bottom: 1px solid ${(props) => props.theme.colors.gray};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
   margin-left: 5px;
   outline: none;
   transition: border-bottom-color 1s ease;
-  background-color: ${(props) => props.theme.colors.x};
 
   &:focus {
-    border-bottom: 2px solid ${(props) => props.theme.colors.focusBlue};
+    border-bottom: 2px solid ${({ theme }) => theme.colors.focusBlue};
   }
-
-  ${(props) =>
-    props.colorDark &&
-    `
-    color: white !important;
-  `}
 `;
 
 export const UserImg = styled.img`

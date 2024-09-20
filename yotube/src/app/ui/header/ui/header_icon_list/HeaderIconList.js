@@ -4,13 +4,13 @@ import alertIcon from "../../asset/alert.svg";
 
 import { Nav, Checkbox } from "./style";
 
-const HeaderIconList = () => {
+const HeaderIconList = (props) => {
   return (
     <Nav>
       <HoverIcon resource={cameraIcon} />
       <HoverIcon resource={alertIcon} />
       <HoverIcon resource={alertIcon} />
-      <Checkbox role="switch" />
+      <Checkbox role="switch" onClick={props.darkModeClick} />
     </Nav>
   );
 };

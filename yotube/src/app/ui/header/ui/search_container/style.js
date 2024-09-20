@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: none;
   align-items: center;
   flex: 0 1 ${({ theme }) => theme.sizes.searchSize};
-
   @media (min-width: 500px) {
     display: flex;
   }
@@ -59,7 +58,7 @@ export const Input = styled.input`
   left: 10px;
   top: 50%;
   transform: translate(0, -50%);
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.text};
   background-color: ${({ theme }) => theme.colors.transparent};
 
   &::placeholder {

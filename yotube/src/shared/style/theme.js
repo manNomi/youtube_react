@@ -1,4 +1,4 @@
-export const colors = {
+const colors = {
   black: "black",
   white: "white",
   gray: "#484848",
@@ -13,7 +13,7 @@ export const colors = {
   shortsComment: "#191919",
 };
 
-export const sizes = {
+const sizes = {
   headerSize: "50px",
   asideSize: "55px",
   searchSize: "732px",
@@ -34,11 +34,31 @@ export const sizes = {
 };
 
 const fontSize = {};
-
-const theme = {
-  sizes,
-  colors,
-  fontSize,
+const darkAside = {
+  textColor: "white",
 };
 
-export default theme;
+const lightAside = {
+  textColor: "#484848",
+};
+
+export const darkTheme = {
+  sizes,
+  colors: {
+    ...colors,
+    text: "white",
+    backgroundColor: "black",
+  },
+  fontSize,
+  darkAside,
+};
+export const lightTheme = {
+  sizes,
+  colors: {
+    ...colors,
+    text: "black",
+    backgroundColor: "white",
+  },
+  fontSize,
+  lightAside,
+};

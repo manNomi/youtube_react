@@ -17,6 +17,8 @@ export const Frame = styled.main`
   flex-wrap: wrap;
   justify-content: center;
   align-items: start;
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  color: ${({ theme }) => theme.colors.text};
 
   @media (min-width: ${({ theme }) => theme.sizes.windowSmallSize}) {
     margin-left: ${({ theme }) => theme.sizes.asideSize};
