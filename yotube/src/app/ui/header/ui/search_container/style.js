@@ -21,11 +21,17 @@ export const Box = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.placeholder};
   display: flex;
   align-items: center;
+  ${Container}:focus-within & {
+    border: none;
+  }
 `;
 
 export const Hidden = styled.div`
   width: ${({ theme }) => theme.sizes.logoSizeSmall};
   height: 0;
+  ${Container}:focus-within & {
+    height: ${({ theme }) => theme.sizes.logoSizeSmall};
+  }
 `;
 
 export const Outline = styled.div`
@@ -36,17 +42,10 @@ export const Outline = styled.div`
   flex-direction: row-reverse;
   align-items: center;
   border: none;
-
   ${Container}:focus-within & {
     border: 1px solid ${({ theme }) => theme.colors.focusBlue};
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
-  }
-  ${Container}:focus-within ${Box} {
-    border: none;
-  }
-  ${Container}:focus-within ${Hidden} {
-    height: ${({ theme }) => theme.sizes.logoSizeSmall};
   }
 `;
 
