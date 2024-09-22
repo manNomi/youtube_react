@@ -51,6 +51,7 @@ export const darkTheme = {
   },
   fontSize,
   darkAside,
+  dark: true,
 };
 export const lightTheme = {
   sizes,
@@ -61,4 +62,5 @@ export const lightTheme = {
   },
   fontSize,
   lightAside,
+  dark: false,
 };

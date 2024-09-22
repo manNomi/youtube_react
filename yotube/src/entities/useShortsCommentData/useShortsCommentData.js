@@ -27,7 +27,6 @@ const useShortsCommentData = () => {
       try {
         const commentData = getShortsCommentData();
         setCommentDataList(commentData);
-
         setLoading(false);
       } catch (error) {
         setError(true);

@@ -16,19 +16,27 @@ import {
   Icon,
 } from "./style.js"; // 스타일 정의를 import
 
+import { useDarkMode } from "../../../../app/model/useDarkModeState/useDarkModeState.js";
+
 import useCommentState from "../../model/useCommentState/useCommentState.js";
 import { setNumber } from "../../../../shared/setNumber/setNumber.js";
 import ShortsComment from "../shortsComment/ShortsComment.js";
 import playIcon from "../../asset/play.svg";
 import soundIcon from "../../asset/sound.svg";
 import likeIcon from "../../asset/like.svg";
+import likeIconWhite from "../../asset/like_white.svg";
 import dislikeIcon from "../../asset/dislike.svg";
+import dislikeIconWhite from "../../asset/dislike_white.svg";
 import shareIcon from "../../asset/share.svg";
+import shareIconWhite from "../../asset/share_white.svg";
 import settingIcon from "../../asset/setting.svg";
+import settingIconWhite from "../../asset/setting_white.svg";
 import commentIcon from "../../asset/comment.svg";
+import commentIconWhite from "../../asset/comment_white.svg";
 
 const ShortsVideo = (props) => {
   const [commentClickRef, commentState, handleClickOutside] = useCommentState();
+  const { darkModeState } = useDarkMode();
 
   return (
     <Group>
@@ -50,13 +58,19 @@ const ShortsVideo = (props) => {
       <IconContainer>
         <IconBox>
           <IconBorder>
-            <Icon $src={likeIcon} alt="Like Icon" />
+            <Icon
+              $src={darkModeState ? likeIconWhite : likeIcon}
+              alt="Like Icon"
+            />
           </IconBorder>
           <p>{setNumber(props.shortsData.like)}</p>
         </IconBox>
         <IconBox>
           <IconBorder>
-            <Icon $src={dislikeIcon} alt="Dislike Icon" />
+            <Icon
+              $src={darkModeState ? dislikeIconWhite : dislikeIcon}
+              alt="Dislike Icon"
+            />
           </IconBorder>
         </IconBox>
         <IconBox>
@@ -64,19 +78,19 @@ const ShortsVideo = (props) => {
             ref={(el) => (commentClickRef.current["comment_btn"] = el)}
             id="comment_btn"
             onClick={() => handleClickOutside(true, "comment_btn")}>
-            <Icon $src={commentIcon} />
+            <Icon $src={darkModeState ? commentIconWhite : commentIcon} />
           </IconBorder>
           <p>{setNumber(props.shortsData.comment)}</p>
         </IconBox>
         <IconBox>
           <IconBorder>
-            <Icon $src={shareIcon} alt="Share Icon" />
+            <Icon $src={darkModeState ? shareIconWhite : shareIcon} />
           </IconBorder>
           <p>공유</p>
         </IconBox>
         <IconBox>
           <IconBorder>
-            <Icon $src={settingIcon} alt="Setting Icon" />
+            <Icon $src={darkModeState ? settingIconWhite : settingIcon} />
           </IconBorder>
         </IconBox>
       </IconContainer>

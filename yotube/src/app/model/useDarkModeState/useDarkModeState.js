@@ -1,10 +1,31 @@
-import React from "react";
-const useDarkModeState = () => {
-  const [darkModeState, setdarkModeState] = React.useState(false);
+// import React from "react";
+// const useDarkModeState = () => {
+//   const [darkModeState, setdarkModeState] = React.useState(false);
+//   const darkModeClick = () => {
+//     setdarkModeState(!darkModeState);
+//   };
+//   return [darkModeState, darkModeClick];
+// };
+// export default useDarkModeState;
+
+import React, { createContext, useContext } from "react";
+
+const DarkModeContext = createContext();
+
+export const DarkModeProvider = ({ children }) => {
+  const [darkModeState, setDarkModeState] = React.useState(false);
+
   const darkModeClick = () => {
-    setdarkModeState(!darkModeState);
-    console.log(darkModeState);
+    setDarkModeState(!darkModeState);
   };
-  return [darkModeState, darkModeClick];
+
+  return (
+    <DarkModeContext.Provider value={{ darkModeState, darkModeClick }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
 };
-export default useDarkModeState;
+
+export const useDarkMode = () => {
+  return useContext(DarkModeContext);
+};

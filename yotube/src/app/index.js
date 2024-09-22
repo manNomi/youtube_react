@@ -4,19 +4,28 @@ import { darkTheme, lightTheme } from "../shared/style/theme.js";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStyle from "./style/GlobalStyle.js";
-import useDarkModeState from "./model/useDarkModeState/useDarkModeState.js";
+import {
+  DarkModeProvider,
+  useDarkMode,
+} from "./model/useDarkModeState/useDarkModeState.js";
 const App = () => {
-  const [darkModeState, darkModeClick] = useDarkModeState();
   return (
-    <>
-      <GlobalStyle />
+    <DarkModeProvider>
       <BrowserRouter>
-        <ThemeProvider theme={darkModeState ? darkTheme : lightTheme}>
-          <Header darkModeClick={darkModeClick} />
-          <Page />
-        </ThemeProvider>
+        <AppTheme />
       </BrowserRouter>
-    </>
+    </DarkModeProvider>
+  );
+};
+
+const AppTheme = () => {
+  const { darkModeState } = useDarkMode();
+  return (
+    <ThemeProvider theme={darkModeState ? darkTheme : lightTheme}>
+      <GlobalStyle />
+      <Header />
+      <Page />
+    </ThemeProvider>
   );
 };
 export default App;
