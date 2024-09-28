@@ -18,18 +18,19 @@ import {
   IconWrap,
 } from "./style.js"; // 스타일 정의를 import
 
-import useCommentState from "../../model/useCommentState/useCommentState.js";
+import useCommentState from "../../model/useCommentState.js";
 import { setNumber } from "../../../../shared/setNumber/setNumber.js";
 import ShortsComment from "../shortsComment/ShortsComment.js";
 
 import playIcon from "../../../../shared/asset/play_black.js";
 import soundIcon from "../../../../shared/asset/sound_black.js";
 import { useTheme } from "styled-components";
+import { useCommentOpen } from "../../model/scrollDenied.js";
 
 const ShortsVideo = (props) => {
   const [commentClickRef, commentState, handleClickOutside] = useCommentState();
+  useCommentOpen(commentState);
   const theme = useTheme();
-
   return (
     <Group>
       <Video>

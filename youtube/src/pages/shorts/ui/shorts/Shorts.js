@@ -5,7 +5,6 @@ import { Root } from "./style.js"; // 새로 정의한 스타일 임포트
 
 const Shorts = () => {
   const [shortsList, loading, error] = useShortsData();
-
   return loading ? (
     <Loading />
   ) : error ? (

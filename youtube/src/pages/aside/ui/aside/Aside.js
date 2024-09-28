@@ -2,7 +2,7 @@ import iconData from "../../consts/asideData.js";
 import AsideIcon from "../aside_element/AsideElement.js";
 import { AsideTag } from "./style.js";
 import { useTheme } from "styled-components";
-import { useNavigateEvent } from "../model/usePageChange";
+import { useNavigateEvent } from "../../../page/model/usePageChange.js";
 const Aside = () => {
   const theme = useTheme();
   const { pageChangeEvent } = useNavigateEvent();
@@ -20,5 +20,4 @@ const Aside = () => {
     </AsideTag>
   );
 };
-
 export default Aside;

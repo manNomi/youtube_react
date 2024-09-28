@@ -4,7 +4,8 @@ export const CommentFrame = styled.dialog`
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -9,8 +9,7 @@ import {
   TextSmall,
   TextSmallBox,
 } from "./style.js"; // 새로 정의한 스타일 임포트
-import { useNavigateEvent } from "../model/usePageChange";
-
+import { useNavigateEvent } from "../../../page/model/usePageChange.js";
 const Video = (props) => {
   const { pageChangeEvent } = useNavigateEvent();
   return (

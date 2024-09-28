@@ -6,6 +6,7 @@ import { createStore } from "redux";
 const initState = {
   page: "/",
   theme_dark: false,
+  comment_visible: false,
 };
 const reducer = (store = initState, action) => {
   switch (action.type) {
@@ -19,10 +20,17 @@ const reducer = (store = initState, action) => {
         ...store,
         theme_dark: action.theme_dark,
       };
+    case "CHANGE_COMMENT":
+      return {
+        ...store,
+        comment_visible: action.comment_visible,
+      };
     case "RESET_PAGE":
       return { ...store, page: "/" };
     case "RESET_THEME":
       return { ...store, theme_dark: false };
+    case "RESET_COMMENT":
+      return { ...store, comment_visible: false };
     default:
       return store;
   }
