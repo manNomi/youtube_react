@@ -11,6 +11,7 @@ const Aside = () => {
   const aside = useMediaQuery({
     query: "(min-width:790px) ",
   });
+  console.log(aside);
   if (!aside) {
     return;
   }
@@ -21,7 +22,9 @@ const Aside = () => {
           content={icon.text}
           resource={theme.icons[icon.img]}
           onClick={() => {
-            pageChangeEvent(icon.type);
+            icon.type === "shorts"
+              ? pageChangeEvent(icon.type, { id: 123 })
+              : pageChangeEvent(icon.type);
           }}
         />
       ))}

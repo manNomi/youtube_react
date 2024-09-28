@@ -10,10 +10,14 @@ import {
   TextSmallBox,
 } from "./style.js"; // 새로 정의한 스타일 임포트
 import { useNavigateEvent } from "../../../page/model/usePageChange.js";
+
 const Video = (props) => {
   const { pageChangeEvent } = useNavigateEvent();
+  const clickEvent = () => {
+    pageChangeEvent("detail", { id: 456 });
+  };
   return (
-    <Group onClick={() => pageChangeEvent("detail")}>
+    <Group onClick={clickEvent}>
       <Img src={props.videoData.thumbImg} alt="" />
       <Title>
         <UserImg src={props.videoData.userImg} alt="" />

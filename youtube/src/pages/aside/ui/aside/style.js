@@ -1,8 +1,6 @@
-import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 
 export const AsideTag = styled.aside`
-  display: none;
   flex-direction: column;
   width: ${({ theme }) => theme.sizes.asideSize};
   position: fixed;
@@ -13,8 +11,4 @@ export const AsideTag = styled.aside`
   font-size: 13px;
   text-align: center;
   top: 0;
-
-  @media (min-width: 790px) {
-    display: flex;
-  }
 `;
