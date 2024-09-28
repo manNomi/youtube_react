@@ -1,31 +1,22 @@
 import Header from "./ui/header";
-import Page from "../page";
+import Page from "../pages/page/ui/Page.js";
 import { darkTheme, lightTheme } from "./style/theme.js";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStyle from "./style/GlobalStyle.js";
-import {
-  DarkModeProvider,
-  useDarkMode,
-} from "./model/useDarkModeState/useDarkModeState.js";
+import { useSelector } from "react-redux";
+
 const App = () => {
+  const theme_dark = useSelector((store) => store.theme_dark);
   return (
-    <DarkModeProvider>
-      <BrowserRouter>
-        <AppTheme />
-      </BrowserRouter>
-    </DarkModeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme_dark ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Header />
+        <Page />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 
-const AppTheme = () => {
-  const { darkModeState } = useDarkMode();
-  return (
-    <ThemeProvider theme={darkModeState ? darkTheme : lightTheme}>
-      <GlobalStyle />
-      <Header />
-      <Page />
-    </ThemeProvider>
-  );
-};
 export default App;

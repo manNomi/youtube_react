@@ -22,8 +22,8 @@ import useCommentState from "../../model/useCommentState/useCommentState.js";
 import { setNumber } from "../../../../shared/setNumber/setNumber.js";
 import ShortsComment from "../shortsComment/ShortsComment.js";
 
-import playIcon from "../../../../shared//asset/play_black.js";
-import soundIcon from "../../../../shared//asset/sound_black.js";
+import playIcon from "../../../../shared/asset/play_black.js";
+import soundIcon from "../../../../shared/asset/sound_black.js";
 import { useTheme } from "styled-components";
 
 const ShortsVideo = (props) => {

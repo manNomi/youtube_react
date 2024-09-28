@@ -1,9 +1,11 @@
 import iconData from "../../consts/asideData.js";
 import AsideIcon from "../aside_element/AsideElement.js";
-import { AsideTag } from "../aside/style.js";
+import { AsideTag } from "./style.js";
 import { useTheme } from "styled-components";
-const Aside = (props) => {
+import { useNavigateEvent } from "../model/usePageChange";
+const Aside = () => {
   const theme = useTheme();
+  const { pageChangeEvent } = useNavigateEvent();
   return (
     <AsideTag>
       {iconData.map((icon) => (
@@ -11,7 +13,7 @@ const Aside = (props) => {
           content={icon.text}
           resource={theme.icons[icon.img]}
           onClick={() => {
-            props.onPageClick(icon.type);
+            pageChangeEvent(icon.type);
           }}
         />
       ))}

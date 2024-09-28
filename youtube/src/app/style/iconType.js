@@ -20,23 +20,23 @@ import WhiteMicIcon from "../ui/header/asset/mic_white";
 import BlackSearchIcon from "../ui/header/asset/search_black";
 import WhiteSearchIcon from "../ui/header/asset/search_white";
 
-import BlackDownloadIcon from "../../page/aside/assets/black_download";
-import WhiteDownloadIcon from "../../page/aside/assets/white_download";
+import BlackDownloadIcon from "../../pages/aside/assets/black_download.js";
+import WhiteDownloadIcon from "../../pages/aside/assets/white_download.js";
 
-import BlackHomeIcon from "../../page/aside/assets/black_home";
-import WhiteHomeIcon from "../../page/aside/assets/white_home";
+import BlackHomeIcon from "../../pages/aside/assets/black_home.js";
+import WhiteHomeIcon from "../../pages/aside/assets/white_home.js";
 
-import BlackShortsIcon from "../../page/aside/assets/black_shorts";
-import WhiteShortsIcon from "../../page/aside/assets/white_shorts";
+import BlackShortsIcon from "../../pages/aside/assets/black_shorts.js";
+import WhiteShortsIcon from "../../pages/aside/assets/white_shorts.js";
 
-import BlackSubscribeIcon from "../../page/aside/assets/black_subscribe";
-import WhiteSubscribeIcon from "../../page/aside/assets/white_subscribe";
+import BlackSubscribeIcon from "../../pages/aside/assets/black_subscribe.js";
+import WhiteSubscribeIcon from "../../pages/aside/assets/white_subscribe.js";
 
-import BlackUserIcon from "../../page/aside/assets/black_user";
-import WhiteUserIcon from "../../page/aside/assets/white_user";
+import BlackUserIcon from "../../pages/aside/assets/black_user.js";
+import WhiteUserIcon from "../../pages/aside/assets/white_user.js";
 
-import BlackYoutubeMusicIcon from "../../page/aside/assets/black_youtube_music";
-import WhiteYoutubeMusicIcon from "../../page/aside/assets/white_youtube_music";
+import BlackYoutubeMusicIcon from "../../pages/aside/assets/black_youtube_music.js";
+import WhiteYoutubeMusicIcon from "../../pages/aside/assets/white_youtube_music.js";
 
 export const darkTypeIcons = {
   alert: WhiteAlertIcon,
