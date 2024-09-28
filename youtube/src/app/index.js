@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import GlobalStyle from "./style/GlobalStyle.js";
 import { useSelector } from "react-redux";
 import { useInitCookie } from "./model/useCookie.js";
+import { PC, Mobile } from "./model/useMediaQuery.js";
 
 const App = () => {
   const theme_dark = useSelector((store) => store.theme_dark);
@@ -14,8 +15,14 @@ const App = () => {
     <BrowserRouter>
       <ThemeProvider theme={theme_dark ? darkTheme : lightTheme}>
         <GlobalStyle />
-        <Header />
-        <Page />
+        <PC>
+          <Header />
+          <Page />
+        </PC>
+        <Mobile>
+          <Header />
+          <Page />
+        </Mobile>
       </ThemeProvider>
     </BrowserRouter>
   );
