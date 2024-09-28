@@ -1,7 +1,7 @@
 export const changeTheme = (theme_dark) => {
   const action = {
     type: "CHANGE_THEME",
-    theme_dark: !theme_dark,
+    theme_dark: theme_dark,
   };
   return action;
 };
