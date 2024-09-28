@@ -5,11 +5,14 @@ import Aside from "./aside";
 import React from "react";
 import ExceptPage from "./except";
 import { Routes, Route, useNavigate } from "react-router-dom";
-
+import { changePage } from "../shared/reudx/action/pageAction";
+import { useDispatch } from "react-redux";
 const Page = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const pageChangeEvent = (page) => {
     navigate(`/${page.toLowerCase()}`);
+    dispatch(changePage(page));
   };
   return (
     <>
