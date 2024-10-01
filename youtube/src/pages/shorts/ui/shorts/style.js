@@ -9,6 +9,7 @@ export const Root = styled.main`
   justify-content: center;
   align-items: center;
   margin-left: 0;
+  overflow: scroll;
   background-color: ${({ theme }) => theme.colors.backgroundColor};
   color: ${({ theme }) => theme.colors.text};
   @media (min-width: ${({ theme }) => theme.sizes.windowSmallSize}) {

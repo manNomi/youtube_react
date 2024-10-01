@@ -7,7 +7,6 @@ export const Group = styled.article`
   flex-direction: column;
   cursor: pointer;
   position: relative;
-  margin-bottom: 100px;
 `;
 
 export const Video = styled.div`

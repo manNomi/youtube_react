@@ -1,20 +1,18 @@
-import { useEffect } from "react"; // React도 함께 임포트
+import { useEffect } from "react";
 
 export const useScrollDetection = (onScrollThreshold) => {
   useEffect(() => {
-    let lastScrollY = 0;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (Math.abs(currentScrollY - lastScrollY) >= 40) {
-        onScrollThreshold();
-        lastScrollY = currentScrollY;
+    const handleWheel = (event) => {
+      const scroll = event.deltaY;
+      if (Math.abs(scroll) >= 80) {
+        console.log(event.deltaY);
+        onScrollThreshold(); // 메모이제이션된 함수 호출
       }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("wheel", handleWheel);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleWheel);
     };
   }, [onScrollThreshold]);
 };

@@ -1,12 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { changePage } from "../../../shared/reudx/action/pageAction";
+import { useScrollDenied } from "./scrollDenied";
 
 export const useNavigateEvent = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const page = useSelector((store) => store.page);
+  let bool = false;
+  const pageType = page.split("?");
+  if ((pageType == null && page === "shorts") || pageType[0] === "shorts") {
+    bool = true;
+  }
+  useScrollDenied(bool);
+
   const pageChangeEvent = (page, obj) => {
     if (obj != null) {
       dispatch(changePage(`${page}?${obj.id}`));
@@ -15,7 +23,6 @@ export const useNavigateEvent = () => {
     }
   };
   useEffect(() => {
-    // 쿼리 파라미터를 포함하여 페이지를 네비게이션합니다.
     navigate(`${page.toLowerCase()}`);
     // ${  searchParams.toString() ? `?${searchParams.toString()}` : ""}
   }, [page, navigate]);
