@@ -2,10 +2,10 @@ import HoverIcon from "../hover_icon/HoverIcon";
 import { Nav, Checkbox } from "./style";
 import { useTheme } from "styled-components";
 import { useThemeChangeEvent } from "../../../../model/useTheme";
-import { useSelector } from "react-redux";
+import useDarkAtom from "../../../../../shared/recoil/useDarkAtom";
 const HeaderIconList = () => {
   const theme = useTheme();
-  const theme_dark = useSelector((store) => store.theme_dark);
+  const [theme_dark] = useDarkAtom();
   const themeChangeEvent = useThemeChangeEvent(!theme_dark);
   return (
     <Nav>

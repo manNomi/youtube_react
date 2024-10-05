@@ -1,13 +1,14 @@
 import ReactDOM from "react-dom/client";
 import App from "./app";
-import { Provider } from "react-redux";
-import store from "./shared/reudx/reducer.js";
 import { CookiesProvider } from "react-cookie";
+import { RecoilRoot } from "recoil";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
   <CookiesProvider>
-    <Provider store={store}>
+    <RecoilRoot>
       <App />
-    </Provider>
+    </RecoilRoot>
   </CookiesProvider>
 );

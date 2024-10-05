@@ -1,15 +1,12 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { changePage } from "../../../shared/reudx/action/pageAction";
+import usePageAtom from "../../../shared/recoil/usePageAtom.js";
 
 export const useNavigateEvent = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const page = useSelector((store) => store.page);
-
+  const [page, setPage] = usePageAtom();
   const pageChangeEvent = (page) => {
-    dispatch(changePage(page));
+    setPage(page);
   };
 
   useEffect(() => {
