@@ -8,7 +8,6 @@ export const useNavigateEvent = () => {
   const pageChangeEvent = (page) => {
     setPage(page);
   };
-
   useEffect(() => {
     navigate(`${page.toLowerCase()}`);
   }, [page, navigate]);
